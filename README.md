@@ -1,70 +1,133 @@
-# Getting Started with Create React App
+# 🎨 Workflow Builder UI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A visual workflow builder application built with React for creating complex workflow diagrams with actions, branches, and conditional logic.
 
-## Available Scripts
+## 🚀 Live Demo
+**[View Live Application](https://workflow-builder-fmflexgz7-sonali-s-projects-9fa407e6.vercel.app/)**  
 
-In the project directory, you can run:
+## ✨ Features
 
-### `npm start`
+### Core Functionality
+- ✅ **Visual Workflow Canvas** - Intuitive drag-and-drop interface
+- ✅ **Three Node Types**:
+  - 🟢 **Action Nodes** - Sequential steps (e.g., "Send Email", "Execute Code")
+  - 🟠 **Branch Nodes** - Conditional logic with True/False paths
+  - 🔴 **End Nodes** - Workflow termination points
+- ✅ **Smart Node Operations**:
+  - Add nodes via context menu
+  - Delete with automatic reconnection
+  - Inline label editing
+- ✅ **Advanced Features**:
+  - 🔄 Undo/Redo with full history
+  - 💾 Save workflow to JSON
+  - 🎯 Context-sensitive UI
+  - 🎨 Color-coded node types
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠️ Technology Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **React 18** - Functional components with Hooks
+- **JavaScript (ES6+)** - Modern JavaScript features
+- **CSS3** - Smooth transitions and animations
+- **No external libraries** - Pure React implementation
 
-### `npm test`
+## 🏃 Running Locally
+```bash
+# Clone the repository
+git clone https://github.com/Sonali6081/workflow-builder.git
+cd workflow-builder
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Install dependencies
+npm install
 
-### `npm run build`
+# Start development server
+npm start
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Open browser to http://localhost:3000
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📁 Project Structure
+```
+workflow-builder/
+├── src/
+│   ├── App.js          # Main workflow builder component (500+ lines)
+│   ├── index.js        # React entry point
+│   └── index.css       # Global styles
+├── public/
+│   └── index.html      # HTML template
+├── package.json        # Dependencies
+└── README.md          # Documentation
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🎯 How to Use
 
-### `npm run eject`
+### Adding Nodes
+1. Click the **+** button on any node
+2. Select node type from the context menu
+3. Node is inserted with smart positioning
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Editing Nodes
+- **Edit Label**: Click on node text
+- **Delete Node**: Click × button (flow auto-reconnects)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Branch Nodes
+- Create conditional workflows
+- Add separate nodes to True/False branches
+- Visual indicators for each path
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### History
+- **Undo**: ↶ button or click toolbar
+- **Redo**: ↷ button to restore changes
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Save
+- Click 💾 **Save** button
+- Check browser console (F12) for JSON structure
 
-## Learn More
+## 🧠 Key Implementation Details
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Data Model
+```javascript
+{
+  id: "unique_id",
+  type: "action" | "branch" | "end",
+  label: "Node Label",
+  children: null | node | { true: node, false: node }
+}
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### State Management
+- React hooks (`useState`, `useCallback`)
+- History tracking for undo/redo
+- Deep cloning for immutable updates
 
-### Code Splitting
+### Smart Deletion
+When a node is deleted:
+- Parent automatically connects to deleted node's children
+- Maintains workflow continuity
+- Branch logic preserved
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🎨 Design Highlights
 
-### Analyzing the Bundle Size
+- **Modern gradient background**
+- **Color-coded nodes**: Green (Action), Orange (Branch), Red (End)
+- **Smooth animations**: CSS transitions for all interactions
+- **Visual connections**: Lines showing workflow flow
+- **Hover effects**: Interactive feedback
+- **Context menus**: Clean, animated popups
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📸 Screenshots
 
-### Making a Progressive Web App
+![Workflow Builder](https://via.placeholder.com/800x400/667eea/ffffff?text=Add+Your+Screenshot+Here)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🚀 Deployment
 
-### Advanced Configuration
+Deployed on **Vercel** for:
+- Instant deployments
+- Automatic HTTPS
+- Global CDN
+- Zero configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 👨‍💻 Author
 
-### Deployment
+**Sonali**  
+GitHub: [@Sonali6081](https://github.com/Sonali6081)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
