@@ -114,9 +114,6 @@ When a node is deleted:
 - **Hover effects**: Interactive feedback
 - **Context menus**: Clean, animated popups
 
-## 📸 Screenshots
-
-![Workflow Builder](https://via.placeholder.com/800x400/667eea/ffffff?text=Add+Your+Screenshot+Here)
 
 ## 🚀 Deployment
 
